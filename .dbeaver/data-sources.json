@@ -1,0 +1,57 @@
+{
+	"folders": {},
+	"connections": {
+		"postgres-jdbc-170820162d1-3b155384b659373c": {
+			"provider": "postgresql",
+			"driver": "postgres-jdbc",
+			"name": "PostgreSQL - postgres",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "5432",
+				"database": "project2",
+				"url": "jdbc:postgresql://localhost:5432/project2",
+				"home": "postgresql-x64-12",
+				"type": "dev",
+				"properties": {
+					"connectTimeout": "20",
+					"loginTimeout": "20"
+				},
+				"provider-properties": {
+					"@dbeaver-show-non-default-db@": "false",
+					"@dbeaver-show-template-db@": "false",
+					"postgresql.dd.plain.string": "false",
+					"postgresql.dd.tag.string": "false"
+				},
+				"handlers": {}
+			},
+			"custom-properties": {
+				"database.meta.separate.connection": "false"
+			}
+		}
+	},
+	"virtual-models": {
+		"postgres-jdbc-170820162d1-3b155384b659373c": {
+			"project2": {
+				"sch_evenement": {
+					"@properties": {
+						"erd.diagram.state": {
+							"serialized": "<diagram version=\"1\" name=\"sch_evenement\" time=\"202003020850\"><entities><data-source id=\"postgres-jdbc-170820162d1-3b155384b659373c\"><entity id=\"1\" name=\"autorisatie_nivo\" fq-name=\"sch_evenement.autorisatie_nivo\" order=\"0\" x=\"651\" y=\"321\"><path name=\"sch_evenement\"/><path name=\"project2\"/></entity><entity id=\"2\" name=\"bankrekening\" fq-name=\"sch_evenement.bankrekening\" order=\"1\" x=\"234\" y=\"20\"><path name=\"sch_evenement\"/><path name=\"project2\"/></entity><entity id=\"3\" name=\"betaling\" fq-name=\"sch_evenement.betaling\" order=\"2\" x=\"20\" y=\"287\"><path name=\"sch_evenement\"/><path name=\"project2\"/></entity><entity id=\"4\" name=\"betalingsmethode\" fq-name=\"sch_evenement.betalingsmethode\" order=\"3\" x=\"234\" y=\"390\"><path name=\"sch_evenement\"/><path name=\"project2\"/></entity><entity id=\"5\" name=\"evenement\" fq-name=\"sch_evenement.evenement\" order=\"4\" x=\"234\" y=\"527\"><path name=\"sch_evenement\"/><path name=\"project2\"/></entity><entity id=\"6\" name=\"gebruiker\" fq-name=\"sch_evenement.gebruiker\" order=\"5\" x=\"454\" y=\"466\"><path name=\"sch_evenement\"/><path name=\"project2\"/></entity><entity id=\"7\" name=\"relatie\" fq-name=\"sch_evenement.relatie\" order=\"6\" x=\"234\" y=\"136\"><path name=\"sch_evenement\"/><path name=\"project2\"/></entity><entity id=\"8\" name=\"stam_item_lijst\" fq-name=\"sch_evenement.stam_item_lijst\" order=\"7\" x=\"454\" y=\"194\"><path name=\"sch_evenement\"/><path name=\"project2\"/></entity><entity id=\"9\" name=\"stam_lijst\" fq-name=\"sch_evenement.stam_lijst\" order=\"8\" x=\"651\" y=\"205\"><path name=\"sch_evenement\"/><path name=\"project2\"/></entity><entity id=\"10\" name=\"timeline\" fq-name=\"sch_evenement.timeline\" order=\"9\" x=\"20\" y=\"648\"><path name=\"sch_evenement\"/><path name=\"project2\"/></entity></data-source></entities><relations><relation name=\"gebruiker_autorisatie_nivo_id_fkey\" fq-name=\"sch_evenement.gebruiker.gebruiker_autorisatie_nivo_id_fkey\" type=\"fk\" pk-ref=\"1\" fk-ref=\"6\"/><relation name=\"relatie_autorisatie_nivo_id_fkey\" fq-name=\"sch_evenement.relatie.relatie_autorisatie_nivo_id_fkey\" type=\"fk\" pk-ref=\"1\" fk-ref=\"7\"/><relation name=\"betaling_bankrekening_id_fkey\" fq-name=\"sch_evenement.betaling.betaling_bankrekening_id_fkey\" type=\"fk\" pk-ref=\"2\" fk-ref=\"3\"/><relation name=\"betaling_betalingsmethode_id_fkey\" fq-name=\"sch_evenement.betaling.betaling_betalingsmethode_id_fkey\" type=\"fk\" pk-ref=\"4\" fk-ref=\"3\"/><relation name=\"betaling_evenement_id_fkey\" fq-name=\"sch_evenement.betaling.betaling_evenement_id_fkey\" type=\"fk\" pk-ref=\"5\" fk-ref=\"3\"/><relation name=\"timeline_evenement_id_fkey\" fq-name=\"sch_evenement.timeline.timeline_evenement_id_fkey\" type=\"fk\" pk-ref=\"5\" fk-ref=\"10\"/><relation name=\"betaling_gebruiker_id_fkey\" fq-name=\"sch_evenement.betaling.betaling_gebruiker_id_fkey\" type=\"fk\" pk-ref=\"6\" fk-ref=\"3\"/><relation name=\"evenement_gebruiker_id_fkey\" fq-name=\"sch_evenement.evenement.evenement_gebruiker_id_fkey\" type=\"fk\" pk-ref=\"6\" fk-ref=\"5\"/><relation name=\"timeline_gebruiker_id_fkey\" fq-name=\"sch_evenement.timeline.timeline_gebruiker_id_fkey\" type=\"fk\" pk-ref=\"6\" fk-ref=\"10\"/><relation name=\"betaling_relatie_id_fkey\" fq-name=\"sch_evenement.betaling.betaling_relatie_id_fkey\" type=\"fk\" pk-ref=\"7\" fk-ref=\"3\"/><relation name=\"relatie_rol_id_fkey\" fq-name=\"sch_evenement.relatie.relatie_rol_id_fkey\" type=\"fk\" pk-ref=\"8\" fk-ref=\"7\"/><relation name=\"stam_item_lijst_stam_lijst_id_fkey\" fq-name=\"sch_evenement.stam_item_lijst.stam_item_lijst_stam_lijst_id_fkey\" type=\"fk\" pk-ref=\"9\" fk-ref=\"8\"/></relations></diagram>"
+						}
+					}
+				}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false
+		}
+	}
+}
