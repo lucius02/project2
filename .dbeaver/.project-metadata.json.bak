@@ -1,1 +1,1 @@
-{"resources":{"Scripts/Script-1.sql":{"sql-editor-data-source-id":"postgres-jdbc-170820162d1-3b155384b659373c","default-catalog":"project2","default-schema":"public"}}}
+{"resources":{"Scripts/Script-1.sql":{"default-schema":"public","sql-editor-data-source-id":"postgres-jdbc-170820162d1-3b155384b659373c","default-catalog":"project2"},"Scripts/Test-Script.sql":{"sql-editor-data-source-id":"postgres-jdbc-170820162d1-3b155384b659373c"}}}
