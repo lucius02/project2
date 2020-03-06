@@ -92,6 +92,8 @@ values 	('1', 'PIN'),
 		('3', 'Bezoeker'),
 		('3', 'VIP'),
 		('3', 'Gastspreker'),
+		('3', 'Docent'),
+		('3', 'Student'),
 		('4', 'HL15-4.094'),
 		('4', 'Aula'),
 		('4', 'College zaal 1'),
@@ -131,7 +133,9 @@ comment on column sch_evenement.relatie.email
 insert into sch_evenement.relatie (rol_id, autorisatie_nivo_id, voornaam, tussenvoegsel, achternaam, telefoonnummer, email)
 values  ('7', '9', 'admin', '', 'admin', '0611111111', 'admin@info.nl'),
 		('7', '9', 'Hugo', '', 'Jannink', '0643134082', 'hugo.jannink@student.hu.nl'),
-		('12', '1', 'Bill', '', 'Gates', '0646543284', 'Bill.Gates@hotmail.com')
+		('12', '1', 'Bill', '', 'Gates', '0646543284', 'Bill.Gates@hotmail.com'),
+		('13', '1', 'Stijn', '', 'Kas', '0639116905', 'Stijn.Kas@hu.nl'),
+		('13', '1', 'Gert', 'van', 'Hardeveld', '0653589441', 'Gert.Hardeveld@hu.nl')
 ;
 
 drop table if exists sch_evenement.gebruiker cascade;
@@ -168,13 +172,15 @@ comment on column sch_evenement.gebruiker.ww
 insert into sch_evenement.gebruiker(autorisatie_nivo_id, voornaam, tussenvoegsel, achternaam, telefoonnummer, email, ww)
 values (9, 'Hugo', '', 'Jannink', '0643134082', 'Hugo.jannink@student.hu.nl', 'WelkomHUGO'),
 	   (1, 'Bert', '', 'Heesakkers', '0612345678', 'Bert.Heesakkers@hu.nl', 'HUWelkom'),
-	   (1, 'Bill', '', 'Gates', '0646543284', 'Bill.Gates@hotmail.com', 'WelkomBILL')   
+	   (1, 'Bill', '', 'Gates', '0646543284', 'Bill.Gates@hotmail.com', 'WelkomBILL'),
+	   (1, 'Stijn', '', 'Kas', '0639116905', 'Stijn.Kas@hu.nl', 'WelkomSTIJN'),
+	   (1, 'Gert', 'van', 'Hardeveld', '0653589441', 'Gert.Hardeveld@hu.nl', 'WelkomGERT')
 ;
    
 drop table if exists sch_evenement.evenement cascade;
 create table sch_evenement.evenement (
 evenement_id serial primary key not null,
-gebruiker_id int not null  references sch_evenement.gebruiker(gebruiker_id),
+gebruiker_id int null  references sch_evenement.gebruiker(gebruiker_id),
 naam varchar not null,
 beschrijving text not null,
 begin_datum Timestamp(0) without time zone not null default current_timestamp,
@@ -182,8 +188,9 @@ eind_datum Timestamp(0) without time zone not null default current_timestamp
 );
 
 insert into sch_evenement.evenement( gebruiker_id, naam, beschrijving, begin_datum, eind_datum)
-values ('1', 'admin','dit is een admin test', '17/02/2020', '21/02/2020 00:17:00'),
-	   ('2', 'Tech convention', 'een convention over allerlei nieuwe en recente techs die worden gebruikt en zijn uitgevonden', '12/03/2020 00:12:00', '12/03/2020 00:17:00')
+values ('2', 'Tech convention', 'een convention over allerlei nieuwe en recente techs die worden gebruikt en zijn uitgevonden', '12/03/2020 00:12:00', '12/03/2020 00:17:00'),
+	   ('4', 'wedstrijd', 'een wedstrijd waarbij de winnaars hun concept mogen presenteren in bled (Slovenië)', '9/03/2020 00:13:00', '9/03/2020 00:17:00'),
+	   ('5', 'nioc onderwijs congres', 'een onderwijs congres', '31/03/2020 00:09:00', '1/04/2020 00:17:00')
 ;
 
 comment on table sch_evenement.evenement
@@ -290,8 +297,7 @@ comment on column sch_evenement.betaling.kost
 	is 'bedrag dat betaald is of nog moet worden betaald';
 
 insert into sch_evenement.betaling(evenement_id, betalingsmethode_id, bankrekening_id, gebruiker_id, naam, beschrijving, bankrekening, datum, kost)
-values ('1', 2, 1, '1', 'AI convention', 'een convention over allemaal AI dingen', 'NL59INGB7135974575', '20/02/2020 00:08:19', '7,50'),
-	   ('2', 2, 2, '2', 'Tech convention', 'een convention over allerlei nieuwe en recente techs die worden gebruikt en zijn uitgevonden', 'NL59INGB2384758548', '02/03/2020 00:08:45', '-150,00')
+values ('2', 2, 2, '2', 'Tech convention', 'een convention over allerlei nieuwe en recente techs die worden gebruikt en zijn uitgevonden', 'NL59INGB2384758548', '02/03/2020 00:08:45', '-150,00')
 ;
 
 

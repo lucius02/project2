@@ -24,7 +24,10 @@
 					"postgresql.dd.plain.string": "false",
 					"postgresql.dd.tag.string": "false"
 				},
-				"handlers": {}
+				"handlers": {},
+				"bootstrap": {
+					"defaultCatalog": "project2"
+				}
 			},
 			"custom-properties": {
 				"database.meta.separate.connection": "false"

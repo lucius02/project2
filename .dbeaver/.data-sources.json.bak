@@ -14,12 +14,23 @@
 				"url": "jdbc:postgresql://localhost:5432/project2",
 				"home": "postgresql-x64-12",
 				"type": "dev",
+				"properties": {
+					"connectTimeout": "20",
+					"loginTimeout": "20"
+				},
 				"provider-properties": {
 					"@dbeaver-show-non-default-db@": "false",
 					"@dbeaver-show-template-db@": "false",
 					"postgresql.dd.plain.string": "false",
 					"postgresql.dd.tag.string": "false"
+				},
+				"handlers": {},
+				"bootstrap": {
+					"defaultCatalog": "project2"
 				}
+			},
+			"custom-properties": {
+				"database.meta.separate.connection": "false"
 			}
 		}
 	},
