@@ -84,6 +84,10 @@ values  ('2', 'verjaardag', '50,00'),
 		('1', 'boodschappen', '-10,00')
 ;
 
-create function trigger_function()
-	return trigger as
-	
+create trigger sch_test.updatetrigger1
+	on test
+	after update 
+	as 
+	begin
+		
+	end

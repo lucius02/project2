@@ -193,6 +193,8 @@ values ('2', 'Tech convention', 'een convention over allerlei nieuwe en recente 
 	   ('5', 'nioc onderwijs congres', 'een onderwijs congres', '31/03/2020 00:09:00', '1/04/2020 00:17:00')
 ;
 
+
+
 comment on table sch_evenement.evenement
 	is 'geef overzicht over alle evenementen';
 comment on column sch_evenement.evenement.evenement_id
