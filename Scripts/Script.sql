@@ -11,7 +11,7 @@ Eind_datum text NOT null
 comment on table public.events_event
 	is 'tabel over de evenement die worden laten gezien op de website';
 comment on column public.events_event.id 
-	is 'primary key en foreign key, het id van het evenement';
+	is 'primary key en foreign key, het id van het evenement, yolo';
 comment on column public.events_event.title 
 	is 'titel van het evenement';
 comment on column public.events_event.naam 
