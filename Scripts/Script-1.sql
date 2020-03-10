@@ -180,27 +180,22 @@ values (9, 'Hugo', '', 'Jannink', '0643134082', 'Hugo.jannink@student.hu.nl', 'W
 drop table if exists sch_evenement.evenement cascade;
 create table sch_evenement.evenement (
 evenement_id serial primary key not null,
-gebruiker_id int null  references sch_evenement.gebruiker(gebruiker_id),
 naam varchar not null,
 beschrijving text not null,
 begin_datum Timestamp(0) without time zone not null default current_timestamp,
 eind_datum Timestamp(0) without time zone not null default current_timestamp
 );
 
-insert into sch_evenement.evenement( gebruiker_id, naam, beschrijving, begin_datum, eind_datum)
-values ('2', 'Tech convention', 'een convention over allerlei nieuwe en recente techs die worden gebruikt en zijn uitgevonden', '12/03/2020 00:12:00', '12/03/2020 00:17:00'),
-	   ('4', 'wedstrijd', 'een wedstrijd waarbij de winnaars hun concept mogen presenteren in bled (Slovenië)', '9/03/2020 00:13:00', '9/03/2020 00:17:00'),
-	   ('5', 'nioc onderwijs congres', 'een onderwijs congres', '31/03/2020 00:09:00', '1/04/2020 00:17:00')
+insert into sch_evenement.evenement( naam, beschrijving, begin_datum, eind_datum)
+values ('Tech convention', 'een convention over allerlei nieuwe en recente techs die worden gebruikt en zijn uitgevonden', '12/03/2020 00:12:00', '12/03/2020 00:17:00'),
+	   ('wedstrijd', 'een wedstrijd waarbij de winnaars hun concept mogen presenteren in bled (Slovenië)', '9/03/2020 00:13:00', '9/03/2020 00:17:00'),
+	   ('nioc onderwijs congres', 'een onderwijs congres', '31/03/2020 00:09:00', '1/04/2020 00:17:00')
 ;
-
-
 
 comment on table sch_evenement.evenement
 	is 'geef overzicht over alle evenementen';
 comment on column sch_evenement.evenement.evenement_id
 	is 'het id van alle evenementen die worden ingepland en de primary key van het tabel';
-comment on column sch_evenement.evenement.gebruiker_id
-	is 'foreign key, laat zien wie er allemaal voor een evenement hebben ingeschreven';
 comment on column sch_evenement.evenement.naam
 	is 'de naam van het evenement';
 comment on column sch_evenement.evenement.beschrijving

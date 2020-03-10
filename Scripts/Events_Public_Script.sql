@@ -1,6 +1,6 @@
 drop table if exists public.events_event;
 create table public.events_event (
-id serial primary key not null references sch_evenement.evenement(evenement_id),
+id serial primary key not null,
 Title text not null,
 Naam text NOT null,
 Beschrijving text NOT null,
@@ -11,7 +11,7 @@ Eind_datum text NOT null
 comment on table public.events_event
 	is 'tabel over de evenement die worden laten gezien op de website';
 comment on column public.events_event.id 
-	is 'primary key en foreign key, het id van het evenement, yolo';
+	is 'primary key en foreign key, het id van het evenement';
 comment on column public.events_event.title 
 	is 'titel van het evenement';
 comment on column public.events_event.naam 
