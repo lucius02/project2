@@ -4,8 +4,10 @@ id serial primary key not null,
 Title text not null,
 Naam text NOT null,
 Beschrijving text NOT null,
-Begin_datum text NOT null,
-Eind_datum text NOT null
+Begin_datum date NOT null,
+Eind_datum date NOT null,
+Start_tijd time not null,
+Eind_tijd time not null
 );
 
 comment on table public.events_event
