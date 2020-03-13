@@ -25,10 +25,10 @@ comment on column public.events_event.begin_datum
 comment on column public.events_event.eind_datum 
 	is 'eind datum van het evenement';
 
-select begin_datum, eind_datum, start_tijd, eind_tijd,
+select id, begin_datum, eind_datum, start_tijd, eind_tijd,
 case 
 	when begin_datum = eind_datum then start_tijd < eind_tijd  
-	when begin_datum < eind_Datum then start_tijd <> eind_tijd
-	else start_tijd = eind_tijd
+	when begin_datum < eind_Datum then start_tijd <> eind_tijd or start_tijd = eind_tijd 
+	when begin_datum > eind_datum then false
 end as datum
 from events_event ee;
