@@ -12,7 +12,7 @@
 				"port": "5432",
 				"database": "project2",
 				"url": "jdbc:postgresql://localhost:5432/project2",
-				"home": "postgresql-x64-12",
+				"home": "postgresql_client",
 				"type": "dev",
 				"properties": {
 					"connectTimeout": "20",
