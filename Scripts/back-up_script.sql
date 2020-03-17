@@ -21,6 +21,3 @@ AS BEGIN
     AND D.QtyToRepair <> I.QtyToRepair
 END
 ;
-
-
-
