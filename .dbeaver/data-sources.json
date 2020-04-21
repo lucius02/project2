@@ -53,7 +53,8 @@
 					"postgresql.dd.plain.string": "false",
 					"postgresql.dd.tag.string": "false"
 				},
-				"auth-model": "native"
+				"auth-model": "native",
+				"handlers": {}
 			},
 			"custom-properties": {
 				"resultset.maxrows": "100000"
