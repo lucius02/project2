@@ -24,12 +24,37 @@
 					"postgresql.dd.plain.string": "false",
 					"postgresql.dd.tag.string": "false"
 				},
+				"auth-model": "native",
 				"bootstrap": {
 					"defaultCatalog": "project2"
 				}
 			},
 			"custom-properties": {
 				"database.meta.separate.connection": "false"
+			}
+		},
+		"postgres-jdbc-1719c7ce630-6879159ee20db3fe": {
+			"provider": "postgresql",
+			"driver": "postgres-jdbc",
+			"name": "PostgreSQL - test",
+			"save-password": true,
+			"show-system-objects": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "5432",
+				"database": "test",
+				"url": "jdbc:postgresql://localhost:5432/test",
+				"home": "postgresql-x64-12",
+				"type": "dev",
+				"provider-properties": {
+					"@dbeaver-show-non-default-db@": "false",
+					"@dbeaver-show-template-db@": "false",
+					"postgresql.dd.plain.string": "false",
+					"postgresql.dd.tag.string": "false"
+				},
+				"auth-model": "native",
+				"handlers": {}
 			}
 		}
 	},
