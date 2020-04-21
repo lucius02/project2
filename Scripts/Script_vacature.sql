@@ -34,5 +34,5 @@ comment on column sch_vacature.vacatures.salary
 	is 'de hoeveelheid die je bij deze baan wordt betaald';
 	
 insert into sch_vacature.vacatures(naam, datum_ingevoerd, job_title, job_description, company_title, salary)
-values ('test', '21-04-2020', 'Test1', 'Test2Test', 'Test3', '60,000')
+values ('test', '21-04-2020', 'Test1', 'Test2Test', 'Test3', '60000')
 ;
