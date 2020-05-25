@@ -36,3 +36,11 @@ comment on column sch_vacature.vacatures.salary
 insert into sch_vacature.vacatures(naam, datum_ingevoerd, job_title, job_description, company_title, salary)
 values ('test', '21-04-2020', 'Test1', 'Test2Test', 'Test3', '60000')
 ;
+
+drop table if exists sch_vacature.test cascade;
+create table sch_vacature.test (
+test_id serial primary key not null,
+voornaam varchar,
+achternaam varchar,
+email varchar
+);
